@@ -10,7 +10,7 @@
         busyIndicatorDelay="{detailView>/delay}">
         <semantic:titleHeading>
             <Title
-                text="{TypeName}"
+                text="{json>/TypeName}"
                 level="H2"/>
         </semantic:titleHeading>
         <semantic:headerContent>
@@ -22,7 +22,7 @@
             <Table
                 id="lineItemsList"
                 width="auto"
-                items="{toPeople}"
+                items="{json>/toPeople/results}"
                 updateFinished=".onListUpdateFinished"
                 noDataText="{i18n>detailLineItemTableNoDataText}"
                 busyIndicatorDelay="{detailView>/lineItemTableDelay}">
@@ -50,8 +50,8 @@
                     <ColumnListItem>
                         <cells>
                             <ObjectIdentifier
-                                title="{Name}"
-                                text="{Id}"/>
+                                title="{json>Name}"
+                                text="{json>Id}"/>
                             <ObjectNumber />
                         </cells>
                     </ColumnListItem>
